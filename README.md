@@ -1,9 +1,8 @@
+# About
+* Best places is a recommendation app that suggests places to visit
 
 # Demo
 * Please click on the below link to try the application
-
-# About
-* Best places is a recommendation app that suggests places to visit
 https://csb-t20jnp.netlify.app/
 
 # Technologies used
