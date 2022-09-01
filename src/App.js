@@ -2,12 +2,42 @@ import React, { useState } from "react";
 import "./styles.css";
 
 const travelDb = {
-  Vizag: [
+  Beaches: [
     {
       name: "Rushikonda Beach",
       special: "Beaches are like heaven and peace",
       rating: "5/5"
     },
+    {
+      name: "Marina Beach",
+      special: "Beaches are the best places to visit anytime ",
+      rating: "4/5"
+    },
+    {
+      name: "Kovalam",
+      special: "Kovalam, Kerala is one of the best beaches to visit",
+      rating: "5/5"
+    }
+  ],
+  Summer: [
+    {
+      name: "Shimla",
+      special: "Shimla should be visited in summer ",
+      rating: "4/5"
+    },
+    {
+      name: "Munnar",
+      special: "This hill station munnar is famous for its tea estates",
+      rating: "4/5"
+    },
+    {
+      name: "Ooty",
+      special:
+        "For every mountain lover, the very idea of travelling to is ooty",
+      rating: "4/5"
+    }
+  ],
+  Winter: [
     {
       name: "Vanjangi",
       special: "Vanjangi is famous to see the sunrises",
@@ -17,46 +47,17 @@ const travelDb = {
       name: "Araku",
       special: "Best time to visit araku is winter",
       rating: "5/5"
-    }
-  ],
-  Chennai: [
-    {
-      name: "Marina Beach",
-      special: "Beaches are the best places to visit anytime ",
-      rating: "4/5"
     },
     {
-      name: "Guindy National Park",
-      special: "This is the place to visit the animals",
-      rating: "4/5"
-    },
-    {
-      name: "Government Museum",
-      special: "Best place to see the ancient collection",
-      rating: "4/5"
-    }
-  ],
-  Banglore: [
-    {
-      name: "Bangalore Palace",
-      special: "This is famous for its architecture",
-      rating: "4/5"
-    },
-    {
-      name: "Nandi Hills",
-      special: "Perfect location to enjoy nature",
-      rating: "4/5"
-    },
-    {
-      name: "Cubbon park",
-      special: "Best place to visit because of its greenary ",
-      rating: "4/5"
+      name: "Manali",
+      special: "Manali, Himachal Pradesh for sure to be visited",
+      rating: "5/5"
     }
   ]
 };
 
 export default function App() {
-  var [places, setPlaces] = useState("Vizag");
+  var [places, setPlaces] = useState("Beaches");
 
   function btnClicked(e) {
     setPlaces(e.target.innerText);
@@ -66,26 +67,26 @@ export default function App() {
       <div className="App">
         <h1>Best places</h1>
         <p>
-          Best places to visit once in lifetime.Click on the button to get
+          Best places to visit once in lifetime.Click on the below genres to get
           started.
         </p>
         <div>
           <button onClick={btnClicked} className="btn">
-            Vizag
+            Beaches
           </button>
           <button onClick={btnClicked} className="btn">
-            Chennai
+            Summer
           </button>
           <button onClick={btnClicked} className="btn">
-            Banglore
+            Winter
           </button>
         </div>
-        {travelDb[places].map((city) => {
+        {travelDb[places].map((Beaches) => {
           return (
-            <div key={city.name} className="container">
-              <h3>{city.name}</h3>
-              <p>Famous for: {city.special}</p>
-              <p>Rating: {city.rating}</p>
+            <div key={Beaches.name} className="container">
+              <h3>{Beaches.name}</h3>
+              <p>Famous for: {Beaches.special}</p>
+              <p>Rating: {Beaches.rating}</p>
             </div>
           );
         })}
