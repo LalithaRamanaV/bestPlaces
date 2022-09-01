@@ -62,32 +62,62 @@ export default function App() {
     setPlaces(e.target.innerText);
   }
   return (
-    <div className="App">
-      <h1>Best places</h1>
-      <p>
-        Best places to visit once in lifetime.Click on the button to get
-        started.
-      </p>
-      <div>
-        <button onClick={btnClicked} className="btn">
-          Vizag
-        </button>
-        <button onClick={btnClicked} className="btn">
-          Chennai
-        </button>
-        <button onClick={btnClicked} className="btn">
-          Banglore
-        </button>
+    <>
+      <div className="App">
+        <h1>Best places</h1>
+        <p>
+          Best places to visit once in lifetime.Click on the button to get
+          started.
+        </p>
+        <div>
+          <button onClick={btnClicked} className="btn">
+            Vizag
+          </button>
+          <button onClick={btnClicked} className="btn">
+            Chennai
+          </button>
+          <button onClick={btnClicked} className="btn">
+            Banglore
+          </button>
+        </div>
+        {travelDb[places].map((city) => {
+          return (
+            <div key={city.name} className="container">
+              <h3>{city.name}</h3>
+              <p>Famous for: {city.special}</p>
+              <p>Rating: {city.rating}</p>
+            </div>
+          );
+        })}
       </div>
-      {travelDb[places].map((city) => {
-        return (
-          <div key={city.name} className="container">
-            <h3>{city.name}</h3>
-            <p>Famous for: {city.special}</p>
-            <p>Rating: {city.rating}</p>
-          </div>
-        );
-      })}
-    </div>
+
+      <footer className="footer">
+        <div className="footer-header">Connect with me here</div>
+        <ul className="list-non-bullet">
+          <li className="list-item-inline">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+              href="https://github.com/LalithaRamanaV"
+            >
+              <i className="fab fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+
+          <li className="list-item-inline">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+              href="https://www.linkedin.com/in/lalithavadavalli/"
+            >
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+        <p>Copyright Lalitha Vadavalli</p>
+      </footer>
+    </>
   );
 }
